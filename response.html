@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response</title>
+    <link rel="stylesheet" href="response_style.css">
+</head>
+
+<body>
+    <div style="text-align: center;" class="response">
+        <h1>PLEASE GIVE YOUR RESPONSE</h1>
+        <br>
+        <p style="font-size: 30px;">Do you want to let him in?</p>
+        <!-- <form action="" method="post">
+            <input type="text" name="response" placeholder="Enter your response">
+            <br>
+            <button type="submit">GO</button>
+        </form> -->
+        <button id="b1">YES</button>
+        <button id="b2">NO</button>
+    </div>
+<!-------------------------------------------niche ka kuch mat edit krna ------------------------------------->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyCBEBT_WywV1wym_xmH-AafzhBzh1qAZRE",
+            authDomain: "security-system-9a042.firebaseapp.com",
+            databaseURL: "https://security-system-9a042-default-rtdb.firebaseio.com/",
+            projectId: "security-system-9a042",
+            storageBucket: "security-system-9a042.appspot.com",
+            messagingSenderId: "657594533352",
+            appId: "1:657594533352:web:b91a66962504ae96b5105d",
+            measurementId: "G-KQSKLRNLBG"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        import { getDatabase, ref, set, child, update, remove }
+            from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
+
+        const db = getDatabase();
+
+        var y = "yes";
+        var n = "no";
+
+        var yesBtn = document.getElementById("b1");
+        var noBtn = document.getElementById("b2");
+
+        function yes() {
+            set(ref(db, "permission/"), {
+                unlock: y
+            })
+                .then(() => {
+                    alert("done");
+                    console.log("hello")
+                })
+                .catch((error) => {
+                    alert("unsuccessful ,error" + error);
+                    console.log("no hello")
+                });
+        }
+
+        function no() {
+            set(ref(db, "permission/"), {
+                unlock: n
+            })
+                .then(() => {
+                    alert("done");
+                    console.log("hello")
+                })
+                .catch((error) => {
+                    alert("unsuccessful ,error" + error);
+                    console.log("no hello")
+                });
+        }
+
+        yesBtn.addEventListener('click', yes);
+        noBtn.addEventListener('click', no);
+
+    </script>
+</body>
+
+</html>

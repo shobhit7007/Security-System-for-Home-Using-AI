@@ -1,2 +1,45 @@
-# Security-System-for-Home-Using-AI
-With the AI camera based security system, homes are becoming smarter. People living in the houses, can utilize the face recognition system to recognize the people coming in their doorstep. While opening the doors, they will get know the person if they know or not to ensure safety from unauthorized people
+# Security_System_for_Home
+
+## Contributors
+
+<ol>
+<li>Rahul Prasad</li>
+</ol>
+
+## Installation
+
+Read instructions Carefully
+
+### Environment Variables:
+
+email_address , email_password
+
+### Pyaudio
+
+In Linux
+
+```
+sudo apt install python3-pyaudio
+```
+
+In Windows
+
+```
+pip install PyAudio
+```
+
+### dlib
+
+```
+pip install dlib
+```
+
+### Packages
+
+```
+python -m pip install -r requirements.txt
+```
+
+### Troubleshooting
+
+if pip is not recognized try python -m pip instead of pip.
