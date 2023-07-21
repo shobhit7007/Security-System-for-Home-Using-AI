@@ -3,7 +3,7 @@
 ## Contributors
 
 <ol>
-<li>Rahul Prasad</li>
+<li>Shobhit Srivastava</li>
 </ol>
 
 ## Installation
